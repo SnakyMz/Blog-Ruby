@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-  user = User.create(name: 'TestBot', photo: 'test photo', bio: 'Tester', posts_counter: 0)
-  subject { Post.new(author: user, title: 'test', text: 'testing', comments_counter: 0, likes_counter: 0) }
+  newuser = User.create(name: 'TestBot', photo: 'test photo', bio: 'Tester', posts_counter: 0)
+  subject { Post.new(author: newuser, title: 'test', text: 'testing', comments_counter: 0, likes_counter: 0) }
   before { subject.save }
 
   it 'name should be present' do
@@ -21,8 +21,8 @@ RSpec.describe Post, type: :model do
   end
 
   it 'returns recent_comments' do
-    Comment.create(user: user, post: subject, text: 'Testing comment')
-    Comment.create(user: user, post: subject, text: 'Comment test')
+    Comment.create(user: newuser, post: subject, text: 'Testing comment')
+    Comment.create(user: newuser, post: subject, text: 'Comment test')
     comments = subject.recent_comments
     expect(comments.length).to eql(2)
   end
