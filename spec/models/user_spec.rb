@@ -9,12 +9,12 @@ RSpec.describe User, type: :model do
     expect(subject).to_not be_valid
   end
 
-  it 'posts count should be >= 0' do
+  it 'posts_counter should be >= 0' do
     subject.posts_counter = -1
     expect(subject).to_not be_valid
   end
 
-  it 'returns recent posts' do
+  it 'returns recent_posts' do
     Post.create(author: subject, title: 'test', text: 'test', comments_counter: 0, likes_counter: 0)
     Post.create(author: subject, title: 'testing', text: 'testing', comments_counter: 0, likes_counter: 0)
     posts = subject.recent_posts
