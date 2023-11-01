@@ -1,15 +1,117 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.userList {
+  padding: 3% 4%;
+}
+
+.userCard {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  margin-bottom: 3%;
+}
+
+.userPhoto {
+  border: 0.2rem solid black;
+}
+
+.userInfo {
+  padding: 2% 2% 1% 3%;
+  margin-left: 0.5rem;
+  border: 0.2rem solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+
+.userHead a {
+  text-decoration: none;
+  color: black;
+}
+
+.userHead a:hover {
+  color: grey;
+}
+
+.userInfo p {
+  font-size: 0.8rem;
+  align-self: self-end;
+}
+
+.userDetail {
+  display: flex;
+  flex-direction: column;
+  padding: 3% 4%;
+}
+
+.userBio {
+  padding: 1%;
+  border: 0.2rem solid black;
+  margin-bottom: 3%;
+}
+
+.userBio h4 {
+  margin-bottom: 3%;
+}
+
+.userPost {
+  padding: 1%;
+  border: 0.2rem solid black;
+  margin-top: 3%;
+  display: flex;
+  flex-direction: column;
+}
+
+.userPost h4 {
+  margin-bottom: 3%;
+}
+
+.userPost a {
+  color: black;
+  text-decoration: none;
+}
+
+.userPost a:hover {
+  color: grey;
+}
+
+.comlik {
+  font-size: 0.7rem;
+  align-self: self-end;
+}
+
+.btn {
+  margin-top: 2%;
+  align-self: center;
+  padding: 1% 2%;
+  border: 0.2rem solid black;
+  box-shadow: 0.2rem 0.2rem black;
+}
+
+.btn a {
+  color: black;
+  text-decoration: none;
+}
+
+.posts {
+  padding: 3%;
+}
+
+.postComments {
+  padding: 1%;
+  border: 0.2rem solid black;
+  margin-top: 0.5%;
+}
+
+.postDetail {
+  padding: 3% 4%;
+}
+
+.postDetail h4 {
+  margin-bottom: 0;
+}
