@@ -1,1 +1,14 @@
-<h1>Post details</h1>
+<section class='postDetail'>
+  <div class='userPost'>
+    <h4><%= @post.title %></h4>
+    <p class='comlik'>Comments: <%= @post.comments_counter.nil? ? 0 : @post.comments_counter %>, Likes: <%= @post.likes_counter.nil? ? 0 : @post.likes_counter %></p>
+    <p><%= @post.text %></p>
+  </div>
+  <% unless @post.comments.empty? %>
+    <div class='postComments'>
+      <% @post.comments.each do |comment| %>
+        <p><%= comment.user.name %>: <%= comment.text %></p>
+      <% end %>
+    </div>
+  <% end %>
+</section>
