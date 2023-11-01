@@ -1,1 +1,27 @@
-<h1>List of all posts</h1>
+<section class='posts'>
+  <div class='userCard'>
+    <div>
+      <%= image_tag @user.photo, alt: @user.name, class: 'userPhoto' %>
+    </div>
+    <div class='userInfo'>
+      <h2 class='userHead'><%= @user.name %></h2>
+      <p>Number of posts: <%= @user.posts_counter %></p>
+    </div>
+  </div>
+  <div class='userPosts'>
+    <% @posts.each do |post| %>
+      <div class='userPost'>
+        <h4><%= link_to post.title, user_post_path(@user, post) %></h4>
+        <p><%= post.text %></p>
+        <p class='comlik'>Comments: <%= post.comments_counter.nil? ? 0 : post.comments_counter %>, Likes: <%= post.likes_counter.nil? ? 0 : post.likes_counter %></p>
+      </div>
+      <% unless post.recent_comments.empty? %>
+        <div class='postComments'>
+          <% post.recent_comments.each do |comment| %>
+            <p><%= comment.user.name %>: <%= comment.text %></p>
+          <% end %>
+        </div>
+      <% end %>  
+    <% end %>
+  </div>
+</section>
