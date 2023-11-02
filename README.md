@@ -94,6 +94,7 @@ Install this project with webpack:
 ```sh
   cd project-folder
   bundle install
+  rails db:setup
 ```
 
 ### Usage

@@ -4,6 +4,8 @@
     <p class='comlik'>Comments: <%= @post.comments_counter.nil? ? 0 : @post.comments_counter %>, Likes: <%= @post.likes_counter.nil? ? 0 : @post.likes_counter %></p>
     <p><%= @post.text %></p>
   </div>
+  <%= button_to 'Like', user_post_likes_path(@user, @post), :class => 'btn', method: :post %>
+  <button class='btn'><%= link_to 'Add new comment', new_user_post_comment_path(@user, @post) %></button>
   <% unless @post.comments.empty? %>
     <div class='postComments'>
       <% @post.comments.each do |comment| %>
