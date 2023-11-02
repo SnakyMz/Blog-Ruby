@@ -34,6 +34,16 @@
   color: black;
 }
 
+.userPost a {
+  color: black;
+  text-decoration: none;
+}
+
+.btn a {
+  color: black;
+  text-decoration: none;
+}
+
 .userHead a:hover {
   color: grey;
 }
@@ -71,11 +81,6 @@
   margin-bottom: 3%;
 }
 
-.userPost a {
-  color: black;
-  text-decoration: none;
-}
-
 .userPost a:hover {
   color: grey;
 }
@@ -91,11 +96,6 @@
   padding: 1% 2%;
   border: 0.2rem solid black;
   box-shadow: 0.2rem 0.2rem black;
-}
-
-.btn a {
-  color: black;
-  text-decoration: none;
 }
 
 .posts {
