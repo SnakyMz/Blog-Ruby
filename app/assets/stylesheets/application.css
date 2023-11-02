@@ -108,10 +108,37 @@
   margin-top: 0.5%;
 }
 
+.addPost {
+  padding: 3% 4%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.field {
+  margin: 1% 0%;
+  padding: 1% 2%;
+  font-size: 1.5rem;
+  border: 0.2rem solid black;
+}
+
+.area {
+  margin: 1% 0%;
+  padding: 1% 2%;
+  font-size: 1.5rem;
+  border: 0.2rem solid black;
+}
+
 .postDetail {
   padding: 3% 4%;
 }
 
 .postDetail h4 {
   margin-bottom: 0;
+}
+
+.addComment {
+  padding: 3% 4%;
 }
