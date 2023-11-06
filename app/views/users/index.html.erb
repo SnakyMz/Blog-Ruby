@@ -2,10 +2,10 @@
   <% @users.each do |user| %>
     <div class='userCard'>
       <div>
-        <%= image_tag user.photo, alt: user.name, class: 'userPhoto' %>
+        <img src=<%= user.photo %> alt='User Image' class='userPhoto'>
       </div>
       <div class='userInfo'>
-        <h2 class='userHead'><%= link_to user.name, user_path(user)%></h2>
+        <h2 class='userHead'><a href=<%= user_path(user)%>><%= user.name %></h2>
         <p>Number of posts: <%= user.posts_counter.nil? ? 0 : user.posts_counter %></p>
       </div>
     </div>
