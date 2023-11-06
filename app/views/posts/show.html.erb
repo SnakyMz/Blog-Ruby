@@ -8,7 +8,7 @@
   <button class='btn'><%= link_to 'Add new comment', new_user_post_comment_path(@user, @post) %></button>
   <% unless @post.comments.empty? %>
     <div class='postComments'>
-      <% @post.comments.each do |comment| %>
+      <% @post.comments.includes(:user).each do |comment| %>
         <p><%= comment.user.name %>: <%= comment.text %></p>
       <% end %>
     </div>
