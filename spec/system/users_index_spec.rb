@@ -3,9 +3,6 @@ require 'rails_helper'
 RSpec.describe "Users", type: :system do
   before do
     driven_by(:rack_test)
-  end
-
-  before(:all) do
     @user = User.create(name: 'TestBot', photo: 'test photo', bio: 'Tester', posts_counter: 4)
   end
 
@@ -22,5 +19,11 @@ RSpec.describe "Users", type: :system do
   it 'Should render number of posts' do
     visit root_path
     expect(page).to have_content('Number of posts: 4')
+  end
+
+  it 'Should click the link with the name of the user' do
+    visit root_path
+    click_on('TestBot')
+    expect(page).to have_current_path(user_path(id: @user.id))
   end
 end
