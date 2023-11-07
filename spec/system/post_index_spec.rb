@@ -31,7 +31,7 @@ RSpec.describe "PostIndices", type: :system do
   end
 
   it 'Should render post comments' do
-    expect(page.html).to include('postComments')
+    expect(page.html).to have_selector('.postComments', count: 1)
   end
 
   it 'Should render post number of comments' do
