@@ -1,7 +1,7 @@
 <section class='userDetail'>
   <div class='userCard'>
     <div>
-      <%= image_tag @user.photo, alt: @user.name, class: 'userPhoto' %>
+      <img src=<%= @user.photo %> alt='User Image' class='userPhoto'>
     </div>
     <div class='userInfo'>
       <h2 class='userHead'><%= @user.name %></h2>

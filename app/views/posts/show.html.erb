@@ -1,6 +1,6 @@
 <section class='postDetail'>
   <div class='userPost'>
-    <h4><%= @post.title %></h4>
+    <h4><%= @post.title %> - <%= @post.author.name %></h4>
     <p class='comlik'>Comments: <%= @post.comments_counter.nil? ? 0 : @post.comments_counter %>, Likes: <%= @post.likes_counter.nil? ? 0 : @post.likes_counter %></p>
     <p><%= @post.text %></p>
   </div>
@@ -8,7 +8,7 @@
   <button class='btn'><%= link_to 'Add new comment', new_user_post_comment_path(@user, @post) %></button>
   <% unless @post.comments.empty? %>
     <div class='postComments'>
-      <% @post.comments.each do |comment| %>
+      <% @post.comments.includes(:user).each do |comment| %>
         <p><%= comment.user.name %>: <%= comment.text %></p>
       <% end %>
     </div>

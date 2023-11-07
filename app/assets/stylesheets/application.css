@@ -17,6 +17,8 @@
 
 .userPhoto {
   border: 0.2rem solid black;
+  height: 5rem;
+  width: 5rem;
 }
 
 .userInfo {
