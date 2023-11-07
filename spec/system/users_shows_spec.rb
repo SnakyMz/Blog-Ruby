@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "UsersShows", type: :system do
+RSpec.describe 'UsersShows', type: :system do
   before do
     driven_by(:rack_test)
     @user = User.create(name: 'Bravo', photo: 'test photo', bio: 'Specer', posts_counter: 0)
