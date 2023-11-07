@@ -111,7 +111,7 @@ To run the project, execute the following command:
 To run tests, run the following command:
 
 ```sh
-  rpsec spec
+  rspec spec
 ```
 
 ### Deployment
@@ -135,6 +135,11 @@ You can deploy this project using GitPages:
 - Twitter: [@SobanSyeed](https://twitter.com/SobanSyeed)
 - LinkedIn: [Soban Syeed](https://www.linkedin.com/in/soban-syeed-82985b241/)
 
+👤 **John Palacios**
+
+- GitHub: [@rysthcraft](https://github.com/Rysth)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/john-palacios-rysthcraft)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>
@@ -154,7 +159,7 @@ Feel free to check the [issues page](../../issues/).
 
 ## ⭐️ Show your support <a name="support"></a>
 
-If you like this project and wish to collaborate. Please contact me.
+If you like this project and wish to collaborate. Please contact us.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
