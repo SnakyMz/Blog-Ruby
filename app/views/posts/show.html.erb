@@ -1,4 +1,5 @@
 <section class='postDetail'>
+  <button class='btn'><%= link_to 'Back', user_posts_path(@user) %></button>
   <div class='userPost'>
     <h4><%= @post.title %> - <%= @post.author.name %></h4>
     <p class='comlik'>Comments: <%= @post.comments_counter.nil? ? 0 : @post.comments_counter %>, Likes: <%= @post.likes_counter.nil? ? 0 : @post.likes_counter %></p>
