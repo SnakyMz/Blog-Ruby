@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
+
   def index
     @user = User.find(params[:user_id])
     @posts = @user.posts
@@ -14,7 +16,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:user_id])
+    @user = current_user
     @post = Post.create(post_params)
     @post.author = @user
     @post.comments_counter = 0
@@ -24,6 +26,17 @@ class PostsController < ApplicationController
       redirect_to user_posts_path(@post.author)
     else
       render :new
+    end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @user = @post.author
+    if @post.destroy
+      flash[:success] = 'Post deleted'
+      redirect_to user_posts_path(@user)
+    else
+      flash[:error] = 'Somethind went wrong!'
     end
   end
 
