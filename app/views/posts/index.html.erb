@@ -10,7 +10,9 @@
     </div>
   </div>
   <div class='userPosts'>
-  <button class='btn'><%= link_to 'Add new post', new_user_post_path %></button>
+  <% if @user == current_user %>
+    <button class='btn'><%= link_to 'Add new post', new_user_post_path %></button>
+  <% end %>
     <% @posts.each do |post| %>
       <div class='userPost'>
         <h4><%= link_to post.title, user_post_path(@user, post) %></h4>
@@ -19,9 +21,6 @@
       </div>
       <% unless post.recent_comments.empty? %>
         <div class='postComments'>
-          <%# 
-            First POST -> COMMENTS -> USER_ID
-           %>
           <% post.recent_comments.includes(:user).each do |comment| %>
             <p><%= comment.user.name %>: <%= comment.text %></p>
           <% end %>

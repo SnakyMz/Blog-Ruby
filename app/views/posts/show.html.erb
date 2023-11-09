@@ -6,11 +6,19 @@
     <p><%= @post.text %></p>
   </div>
   <%= button_to 'Like', user_post_likes_path(@user, @post), :class => 'btn', method: :post %>
+  <% if can? :destroy, @post %>
+    <%= button_to 'Delete post', user_post_path(@post.author, @post), :class => 'btn', method: :delete %>
+  <% end %>
   <button class='btn'><%= link_to 'Add new comment', new_user_post_comment_path(@user, @post) %></button>
   <% unless @post.comments.empty? %>
     <div class='postComments'>
       <% @post.comments.includes(:user).each do |comment| %>
-        <p><%= comment.user.name %>: <%= comment.text %></p>
+        <p>
+          <%= comment.user.name %>: <%= comment.text %>
+          <% if can? :destroy, comment %>
+            <%= button_to 'Delete', user_post_comment_path(comment.user, @post, comment), method: :delete %>
+          <% end %>  
+        </p>
       <% end %>
     </div>
   <% end %>
